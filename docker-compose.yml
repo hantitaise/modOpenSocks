@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  websocket:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: ["hypercorn", "main:app", "--reload"]
